@@ -25,7 +25,7 @@ command_not_found_handle() {
     fi
 }
 
-PS1='\[\e]0;\u@\h: \w\a\]\[\033[1;92m\]\u@\h\[\033[m\]:\[\033[1;94m\]\w\[\033[m\]\n\$ '
+# PS1='\[\e]0;\u@\h: \w\a\]\[\033[1;92m\]\u@\h\[\033[m\]:\[\033[1;94m\]\w\[\033[m\]\n\$ '
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 [ -x /usr/bin/dircolors ] && eval "$(dircolors -b)"
@@ -40,8 +40,6 @@ eval "$(aactivator init)"
 export PYTHONSTARTUP=~/.pythonrc.py
 export EDITOR=babi VISUAL=babi
 
-export DEBEMAIL="asottile@umich.edu" DEBFULLNAME="Anthony Sottile"
-
 export PIP_DISABLE_PIP_VERSION_CHECK=1
 export VIRTUALENV_NO_PERIODIC_UPDATE=1
 
@@ -51,3 +49,53 @@ if [ -d ~/.bashrc.d ]; then
     done
     unset f
 fi
+
+
+# oh-my-bash config
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_OPTS="-i -e -m"
+
+# Path to your oh-my-bash installation.
+export OSH='/home/clasherkasten/.oh-my-bash'
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-bash is loaded.
+OSH_THEME="powerline-multiline"
+
+# Uncomment the following line to use case-sensitive completion.
+OMB_CASE_SENSITIVE="true"
+
+OMB_USE_SUDO=true
+
+# To enable/disable display of Python virtualenv and condaenv
+OMB_PROMPT_SHOW_PYTHON_VENV=true  # enable
+# OMB_PROMPT_SHOW_PYTHON_VENV=false # disable
+
+# Which completions would you like to load? (completions can be found in ~/.oh-my-bash/completions/*)
+# Custom completions may be added to ~/.oh-my-bash/custom/completions/
+# Example format: completions=(ssh git bundler gem pip pip3)
+# Add wisely, as too many completions slow down shell startup.
+completions=(
+  git
+  composer
+  ssh
+  pip
+)
+
+# Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
+# Custom aliases may be added to ~/.oh-my-bash/custom/aliases/
+# Example format: aliases=(vagrant composer git-avh)
+# Add wisely, as too many aliases slow down shell startup.
+aliases=(
+  general
+)
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-bash/plugins/*)
+# Custom plugins may be added to ~/.oh-my-bash/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git
+)
+
+source "$OSH"/oh-my-bash.sh

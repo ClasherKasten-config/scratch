@@ -13,14 +13,12 @@
 [grep]
     extendedRegexp = true
 [init]
-    defaultBranch = main
-[sendemail]
-    smtpuser = asottile
-    smtpserver = smtp.mail.umich.edu
-    smtpencryption = tls
-    smtpserverport = 587
+    defaultBranch = master
 [ui]
     editor = babi
 [user]
-    name = Anthony Sottile
-    email = asottile@umich.edu
+    email = cfb1470@gmail.com
+    name = ClasherKasten
+    signingKey = FAF77373D38D88E4
+[pull]
+    rebase = true
